@@ -1,0 +1,29 @@
+<app-header (input)="onSearchUserId($event)"></app-header>
+<div class="mt-5 container ">
+    <div class="row" *ngIf="!loading">
+        <div class="col-xl-3 col-md-6 col-sm-12 " *ngFor="let it of filteredUsers">
+            <div routerLink="/details/{{it.id}}">
+                    <img  src="{{it.avatar}}" alt="">
+                <div class="body">
+                    <!-- <h4> -->
+                        <div><strong>Name :</strong>{{it.first_name}} {{it.last_name}}</div>
+                        <div>{{it.email}}</div>
+
+                    <!-- </h4> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center w-100" *ngIf="loading">
+        <app-spinner></app-spinner>
+    </div>
+
+
+
+</div>
+<!--
+"id": 1,
+"email": "george.bluth@reqres.in",
+"first_name": "George",
+"last_name": "Bluth",
+"avatar": "https://reqres.in/img/faces/1-image.jpg" -->

@@ -1,0 +1,25 @@
+<div class="box mt-5 container" >
+    <div class="row" *ngIf="!loading">
+        <div class="col-lg-3 col-md-12">
+            <img src="{{data.avatar}}" alt="">
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <div class="info">
+                <ul class="list-unstyled">
+                    <li><strong>First Name :</strong>{{data.first_name}}</li>
+                    <li><strong>Last Name :</strong>{{data.last_name}}</li>
+                    <li><strong>Email :</strong> <a href="#">{{data.email}}</a> </li>
+                    <li><strong>Info :</strong>{{support.text}}</li>
+                    <li><strong>Link :</strong> <a href="{{support.url}}"> info </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <app-spinner *ngIf="loading"></app-spinner>
+    </div>
+
+    <div class="row" routerLink="/home">
+    <button class="btn btn-success my-5 my-lg-0" >Go Back </button>
+    </div>
+</div>
